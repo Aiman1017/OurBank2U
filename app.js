@@ -54,7 +54,7 @@ let loanInterestRate = 5
                     document.getElementById('amountPaid').value = userCurrency + ' ' +instalmentPaidTotal.toFixed(2)
                     document.getElementById('currentBalance').value = userCurrency + ' ' + loanBalancePayable.toFixed(2) 
                 } else{
-                    alert('You loan account is 0')
+                    alert('You have fully repaid your personal loan. Thank you.')
                     // document.getElementById('amountPaid').value = ''
                     // document.getElementById('currentBalance').value = ''
                     location.reload();
