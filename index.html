@@ -16,31 +16,31 @@
             redirect: 'follow'
             };
 
-            fetch("http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
+            fetch("https://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
             .then(response => response.json())
             .then(result => document.getElementById('currency1').innerHTML = result[139].sISOCode)
             .catch(error => console.log('error', error));  
 
 
-            fetch("http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
+            fetch("https://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
             .then(response => response.json())
             .then(result => document.getElementById('currency2').innerHTML = result[48].sISOCode)
             .catch(error => console.log('error', error)); 
 
 
-            fetch("http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
+            fetch("https://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
             .then(response => response.json())
             .then(result => document.getElementById('currency3').innerHTML = result[54].sISOCode)
             .catch(error => console.log('error', error));  
 
 
-            fetch("http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
+            fetch("https://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
             .then(response => response.json())
             .then(result => document.getElementById('currency4').innerHTML = result[64].sISOCode)
             .catch(error => console.log('error', error));  
 
 
-            fetch("http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
+            fetch("https://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
             .then(response => response.json())
             .then(result => document.getElementById('currency5').innerHTML = result[45].sISOCode)
             .catch(error => console.log('error', error));
