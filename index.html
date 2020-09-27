@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Website</title>
+    <script type="text/javascript">
+         var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json; charset=utf-8");
+            var raw = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap12:Body>\n    <ListOfCurrenciesByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\n    </ListOfCurrenciesByName>\n  </soap12:Body>\n</soap12:Envelope>";
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
+            .then(response => response.json())
+            .then(result => document.getElementById('currency1').innerHTML = result[139].sISOCode)
+            .catch(error => console.log('error', error));  
+
+
+            fetch("http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
+            .then(response => response.json())
+            .then(result => document.getElementById('currency2').innerHTML = result[48].sISOCode)
+            .catch(error => console.log('error', error)); 
+
+
+            fetch("http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
+            .then(response => response.json())
+            .then(result => document.getElementById('currency3').innerHTML = result[54].sISOCode)
+            .catch(error => console.log('error', error));  
+
+
+            fetch("http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
+            .then(response => response.json())
+            .then(result => document.getElementById('currency4').innerHTML = result[64].sISOCode)
+            .catch(error => console.log('error', error));  
+
+
+            fetch("http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCurrenciesByName/JSON", requestOptions)
+            .then(response => response.json())
+            .then(result => document.getElementById('currency5').innerHTML = result[45].sISOCode)
+            .catch(error => console.log('error', error));
+    </script>
+</head>
+<body>
+    <div id='loanpage'>
+        
+        <form id='loanform'>        
+            <h3>Loan Calculator</h3>
+            <table>
+                <tr>
+                    <td>Loan amount required</td>
+                    <td>
+                        <input type="text" min="100" max="100,000" id="loanamount" autocomplete="off" required placeholder="Max 100,000">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>currency</td>
+                    <td>
+                        <select name="currency" value="currency" id="currency">
+                            <option id="currency1"></option>
+        
+                            <option id='currency2'></option>
+                            <option id='currency3'></option>
+                            <option id='currency4'></option>
+                            <option id='currency5'></option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Repayment period in years</td>
+                    <td>
+                        <input type="text" min="1" max="5" id="period" autocomplete="off" placeholder="Max 5 years">
+                    </td>
+                </tr>
+ 
+                <tr>
+                    <td>Interest p.a. </td>
+                    <td>
+                        <input type="text" value='5%' disabled id="interest"> 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="button" value="Calculate weekly instalment" class="btn btn-success" onclick="loanForm();"> 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Total amount payable</td>
+                    <td>
+                        <input type="text" disabled id="payableloan">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Weekly instalment amount</td>
+                    <td>
+                        <input type="text" disabled id="weeklyloan">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Number of instalments</td>
+                    <td>
+                        <input type="text" disabled id="numberInstalment">
+                    </td>
+                </tr>
+                
+            </table>
+        </form>
+
+    <div id="repayform">
+        <h3>Loan payment</h3>
+
+        <form>
+            <table>
+                <tr>
+                    <td>Total amount payable</td>
+                    <td>
+                        <input type="text" id="repayamount" disabled autocomplete="off">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Total instalments paid</td>
+                    <td>
+                        <input type="text" name="paidloan" disabled id="amountPaid">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Loan balance payable</td>
+                    <td>
+                        <input type="text" disabled name="paidloan" id="currentBalance">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Instalment amount due</td>
+                    <td>
+                        <input type="text" disabled name="paidloan" id="due">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="button" class="btn btn-success" id="paybtn" onclick="payNow()" value="Pay now">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+    <script type="text/javascript" src="app.js">    
+    </script>
+    </body>
+</html>

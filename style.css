@@ -1,0 +1,41 @@
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+#loanform{
+	border-radius: 10px 10px 10px 10px;
+	width: 40%;
+	background: #fff;
+	margin: 3rem 30rem;
+	padding: 1rem 3rem; 
+	box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+	background-color: lightblue;
+}
+
+input{
+	text-align: center;
+}
+
+#loanamount, #currency, #period, #interest, #payableloan, #weeklyloan, #numberInstalment{
+ margin: 0.4rem 0;
+}
+
+#repayform #repayamount, #repayform #due, #repayform #amountPaid, #repayform #currentBalance{
+	margin: 0.5rem 3.5rem;
+}
+
+#repayform{
+	border-radius: 10px 10px 10px 10px;
+	height: 100%;
+	width: 40%;
+	background: #fff;
+	padding: 1rem 3rem; 
+	margin: 3rem 30rem;
+	box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+	background-color: lightblue;
+}
+
+.btn{
+	margin: 1rem 0;
+}
+
